@@ -36,8 +36,7 @@
 
 class SpindleLaser {
 public:
-  static cutter_power_t power, setPower;
-  static bool isOn;
+  static cutter_power_t power, setPower, isOn;
 
   static inline uint8_t powerPercent(const uint8_t pp) { return ui8_to_percent(pp); } // for display
 
@@ -46,7 +45,6 @@ public:
   // Modifying this function should update everywhere
   static inline bool enabled(const cutter_power_t pwr) { return pwr > 0; }
   static inline bool enabled() { return enabled(power); }
-  static inline uint8_t powerPercent(const uint8_t pp) { return ui8_to_percent(pp); } // for display
 
   static void apply_power(const cutter_power_t inpow);
 
